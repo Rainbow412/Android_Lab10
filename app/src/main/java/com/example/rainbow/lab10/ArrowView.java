@@ -11,7 +11,7 @@ import android.widget.ImageView;
  */
 
 public class ArrowView extends ImageView {
-    private static final float ROTATION_THRESHOLD = 1.0f;
+    private static final float ROTATION_THRESHOLD = 1.0f; //箭头旋转角度阈值
     public ArrowView(Context context){
         super(context);
         init();
@@ -31,6 +31,7 @@ public class ArrowView extends ImageView {
     public float getCurRotation(){
         return mCurRotation;
     }
+    //旋转箭头图片
     public void onUpdateRotation(float newRotation){
         if(Math.abs(newRotation-mCurRotation)>ROTATION_THRESHOLD){
             RotateAnimation animation = new RotateAnimation(mCurRotation, newRotation,
@@ -41,6 +42,5 @@ public class ArrowView extends ImageView {
 
             mCurRotation = newRotation;
         }
-
     }
 }
